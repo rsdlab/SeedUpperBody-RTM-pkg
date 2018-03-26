@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rtc:RtcProfile rtc:version="0.2" rtc:id="RTC:rsdlab:Category:SeedUpperBodyRTC:1.0.0" xmlns:rtc="http://www.openrtp.org/namespaces/rtc" xmlns:rtcExt="http://www.openrtp.org/namespaces/rtc_ext" xmlns:rtcDoc="http://www.openrtp.org/namespaces/rtc_doc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <rtc:BasicInfo xsi:type="rtcExt:basic_info_ext" rtcExt:saveProject="SeedUpperBodyRTC" rtc:updateDate="2017-09-22T18:41:43+09:00" rtc:creationDate="2017-09-22T18:41:43+09:00" rtc:version="1.0.0" rtc:vendor="rsdlab" rtc:maxInstances="1" rtc:executionType="PeriodicExecutionContext" rtc:executionRate="1000.0" rtc:description="SeedUpperBodyRTC" rtc:category="Category" rtc:componentKind="DataFlowComponent" rtc:activityType="PERIODIC" rtc:componentType="STATIC" rtc:name="SeedUpperBodyRTC">
+        <rtcExt:VersionUpLogs></rtcExt:VersionUpLogs>
+        <rtcExt:VersionUpLogs></rtcExt:VersionUpLogs>
+        <rtcExt:VersionUpLogs></rtcExt:VersionUpLogs>
+        <rtcExt:VersionUpLogs></rtcExt:VersionUpLogs>
+    </rtc:BasicInfo>
+    <rtc:Actions>
+        <rtc:OnInitialize xsi:type="rtcDoc:action_status_doc" rtc:implemented="true"/>
+        <rtc:OnFinalize xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnStartup xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnShutdown xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnActivated xsi:type="rtcDoc:action_status_doc" rtc:implemented="true"/>
+        <rtc:OnDeactivated xsi:type="rtcDoc:action_status_doc" rtc:implemented="true"/>
+        <rtc:OnAborting xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnError xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnReset xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnExecute xsi:type="rtcDoc:action_status_doc" rtc:implemented="true"/>
+        <rtc:OnStateUpdate xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnRateChanged xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnAction xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+        <rtc:OnModeChanged xsi:type="rtcDoc:action_status_doc" rtc:implemented="false"/>
+    </rtc:Actions>
+    <rtc:ConfigurationSet>
+        <rtc:Configuration xsi:type="rtcExt:configuration_ext" rtcExt:variableName="port_name" rtc:unit="" rtc:defaultValue="/dev/serial/by-id/usb-FTDI_TTL232R-3V3_FT98HKZC-if00-port0" rtc:type="string" rtc:name="port_name">
+            <rtcExt:Properties rtcExt:value="text" rtcExt:name="__widget__"/>
+        </rtc:Configuration>
+    </rtc:ConfigurationSet>
+    <rtc:ServicePorts xsi:type="rtcExt:serviceport_ext" rtcExt:position="RIGHT" rtc:name="RightManipulatorCommonInterface_Common">
+        <rtc:ServiceInterface xsi:type="rtcExt:serviceinterface_ext" rtcExt:variableName="" rtc:path="/home/rsdlab/workspace/idl/ManipulatorCommonInterface" rtc:type="JARA_ARM::ManipulatorCommonInterface_Common" rtc:idlFile="/home/rsdlab/workspace/idl/ManipulatorCommonInterface/ManipulatorCommonInterface_Common.idl" rtc:instanceName="ManipulatorCommonInterface_Common" rtc:direction="Provided" rtc:name="ManipulatorCommonInterface_Common"/>
+    </rtc:ServicePorts>
+    <rtc:ServicePorts xsi:type="rtcExt:serviceport_ext" rtcExt:position="RIGHT" rtc:name="RightManipulatorCommonInterface_Middle">
+        <rtc:ServiceInterface xsi:type="rtcExt:serviceinterface_ext" rtcExt:variableName="" rtc:path="/home/rsdlab/workspace/idl/ManipulatorCommonInterface" rtc:type="JARA_ARM::ManipulatorCommonInterface_Middle" rtc:idlFile="/home/rsdlab/workspace/idl/ManipulatorCommonInterface/ManipulatorCommonInterface_MiddleLevel.idl" rtc:instanceName="ManipulatorCommonInterface_Middle" rtc:direction="Provided" rtc:name="ManipulatorCommonInterface_Middle"/>
+    </rtc:ServicePorts>
+    <rtc:ServicePorts xsi:type="rtcExt:serviceport_ext" rtcExt:position="RIGHT" rtc:name="LeftManipulatorCommonInterface_Common">
+        <rtc:ServiceInterface xsi:type="rtcExt:serviceinterface_ext" rtcExt:variableName="" rtc:path="/home/rsdlab/workspace/idl/Seednoid/LeftManipulatorCommonInterface" rtc:type="JARA_ARM_LEFT::LeftManipulatorCommonInterface_Common" rtc:idlFile="/home/rsdlab/workspace/idl/Seednoid/LeftManipulatorCommonInterface/LeftManipulatorCommonInterface_Common.idl" rtc:instanceName="LeftManipulatorCommonInterface_Common" rtc:direction="Provided" rtc:name="LeftManipulatorCommonInterface_Common"/>
+    </rtc:ServicePorts>
+    <rtc:ServicePorts xsi:type="rtcExt:serviceport_ext" rtcExt:position="RIGHT" rtc:name="LeftManipulatorCommonInterface_Middle">
+        <rtc:ServiceInterface xsi:type="rtcExt:serviceinterface_ext" rtcExt:variableName="" rtc:path="/home/rsdlab/workspace/idl/Seednoid/LeftManipulatorCommonInterface" rtc:type="JARA_ARM_LEFT::LeftManipulatorCommonInterface_Middle" rtc:idlFile="/home/rsdlab/workspace/idl/Seednoid/LeftManipulatorCommonInterface/LeftManipulatorCommonInterface_MiddleLevel.idl" rtc:instanceName="LeftManipulatorCommonInterface_Middle" rtc:direction="Provided" rtc:name="LeftManipulatorCommonInterface_Middle"/>
+    </rtc:ServicePorts>
+    <rtc:ServicePorts xsi:type="rtcExt:serviceport_ext" rtcExt:position="RIGHT" rtc:name="SeedWaistInterface">
+        <rtc:ServiceInterface xsi:type="rtcExt:serviceinterface_ext" rtcExt:variableName="" rtc:path="/home/rsdlab/workspace/idl/Seednoid/SeedWaistInterface" rtc:type="SeedWaist::SeedWaistInterface" rtc:idlFile="/home/rsdlab/workspace/idl/Seednoid/SeedWaistInterface/SeedWaistInterface.idl" rtc:instanceName="SeedWaistInterface" rtc:direction="Provided" rtc:name="SeedWaistInterface"/>
+    </rtc:ServicePorts>
+    <rtc:ServicePorts xsi:type="rtcExt:serviceport_ext" rtcExt:position="RIGHT" rtc:name="SeedNeckInterface">
+        <rtc:ServiceInterface xsi:type="rtcExt:serviceinterface_ext" rtcExt:variableName="" rtc:path="/home/rsdlab/workspace/idl/Seednoid/SeedNeckInterface" rtc:type="SeedNeck::SeedNeckInterface" rtc:idlFile="/home/rsdlab/workspace/idl/Seednoid/SeedNeckInterface/SeedNeckInterface.idl" rtc:instanceName="SeedNeckInterface" rtc:direction="Provided" rtc:name="SeedNeckInterface"/>
+    </rtc:ServicePorts>
+    <rtc:Language xsi:type="rtcExt:language_ext" rtc:kind="C++"/>
+</rtc:RtcProfile>

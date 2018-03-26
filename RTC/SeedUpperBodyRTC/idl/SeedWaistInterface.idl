@@ -1,0 +1,39 @@
+#ifndef SEEDWAISTINTERFACE_IDL
+#define SEEDWAISTINTERFACE_IDL
+#include "BasicDataType.idl"
+module SeedWaist{
+    
+  struct RETURN_ID {
+    long id;
+    string comment;
+  };
+  
+  struct LimitValue{
+    double upper;
+    double lower;
+  };
+
+  typedef sequence<double> WaistPos;
+  typedef sequence<LimitValue> LimitSeq;
+  typedef unsigned long ULONG;
+
+  const long OK = 0;
+  const long NG = -1;
+  const long STATUS_ERR = -2;
+  const long VALUE_ERR = -3;
+  const long NOT_SV_ON_ERR = -4;
+  const long FULL_MOTION_QUEUE_ERR = -5;
+  const long NOT_IMPLEMENTED = -6;
+  
+  interface SeedWaistInterface {
+    RETURN_ID servoOFF();
+    RETURN_ID servoON();
+    RETURN_ID getSoftLimitWaist(out LimitSeq softLimit);
+    RETURN_ID setSoftLimitWaist(in LimitSeq softLimit);
+    RETURN_ID getFeedbackPosWaist(out WaistPos pos);
+    RETURN_ID movePTPWaistAbs(in WaistPos waistPoints);
+    RETURN_ID movePTPWaistRel(in WaistPos waistPoints);
+    RETURN_ID setSpeedWaist(in ULONG spdRatio);
+  };
+};
+#endif //SEEDWAISTINTERFACE_IDL
