@@ -1,0 +1,54 @@
+# IkSolvers_SeedWaistLeftArm CMake config file
+#
+# This file sets the following variables:
+# IkSolvers_SeedWaistLeftArm_FOUND - Always TRUE.
+# IkSolvers_SeedWaistLeftArm_INCLUDE_DIRS - Directories containing the IkSolvers_SeedWaistLeftArm include files.
+# IkSolvers_SeedWaistLeftArm_IDL_DIRS - Directories containing the IkSolvers_SeedWaistLeftArm IDL files.
+# IkSolvers_SeedWaistLeftArm_LIBRARIES - Libraries needed to use IkSolvers_SeedWaistLeftArm.
+# IkSolvers_SeedWaistLeftArm_DEFINITIONS - Compiler flags for IkSolvers_SeedWaistLeftArm.
+# IkSolvers_SeedWaistLeftArm_VERSION - The version of IkSolvers_SeedWaistLeftArm found.
+# IkSolvers_SeedWaistLeftArm_VERSION_MAJOR - The major version of IkSolvers_SeedWaistLeftArm found.
+# IkSolvers_SeedWaistLeftArm_VERSION_MINOR - The minor version of IkSolvers_SeedWaistLeftArm found.
+# IkSolvers_SeedWaistLeftArm_VERSION_REVISION - The revision version of IkSolvers_SeedWaistLeftArm found.
+# IkSolvers_SeedWaistLeftArm_VERSION_CANDIDATE - The candidate version of IkSolvers_SeedWaistLeftArm found.
+
+message(STATUS "Found IkSolvers_SeedWaistLeftArm-@PROJECT_VERSION@")
+set(IkSolvers_SeedWaistLeftArm_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(IkSolvers_SeedWaistLeftArm_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(IkSolvers_SeedWaistLeftArm_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(IkSolvers_SeedWaistLeftArm_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(IkSolvers_SeedWaistLeftArm_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(IkSolvers_SeedWaistLeftArm_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(IkSolvers_SeedWaistLeftArm_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(IkSolvers_SeedWaistLeftArm_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(IkSolvers_SeedWaistLeftArm_VERSION @PROJECT_VERSION@)
+set(IkSolvers_SeedWaistLeftArm_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(IkSolvers_SeedWaistLeftArm_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(IkSolvers_SeedWaistLeftArm_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(IkSolvers_SeedWaistLeftArm_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+
