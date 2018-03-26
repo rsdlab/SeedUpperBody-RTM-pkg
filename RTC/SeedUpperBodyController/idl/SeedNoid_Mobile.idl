@@ -1,0 +1,40 @@
+#ifndef SEEDNOID_MOBILE_IDL
+#define SEEDNOID_MOBILE_IDL
+
+#include <BasicDataType.idl>
+#include <ExtendedDataTypes.idl>
+#include <InterfaceDataTypes.idl>
+
+module SeedNoid_Mobile {
+
+  enum RETURN_VALUE
+  {
+    // COMMON
+    RETURN_OK,
+    RETURN_MOVE_OK,
+    RETURN_INVALID_PARAMETER,
+    RETURN_NOT_FOUND,
+    RETURN_OUT_OF_RANGE,
+    RETURN_ERROR
+  };
+
+  struct LifterParam
+  {
+    //X coordinate in metres.
+    double x;
+    //Z coordinate in metres.
+    double z;
+  };
+
+  interface LifterInterface
+  {
+    // Send Lifter Pose
+    RETURN_VALUE sendLifterPose(in LifterParam targetLifterPose);
+
+    // Get Lifter Pose
+    RETURN_VALUE getLifterPose(out LifterParam currentLifterPose);
+  };
+
+};
+
+#endif     /* SEEDNOID_MOBILE_IDL */
